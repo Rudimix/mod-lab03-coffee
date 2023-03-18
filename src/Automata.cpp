@@ -1,3 +1,4 @@
+// Copyright 2023 Rudimix
 #include "Automata.h"
 
 Automata::Automata() {
@@ -18,13 +19,11 @@ void Automata::off() {
     if (state == WAIT) {
         state = OFF;
         cout << "Automata is off\n";
-    }
-    else if (state == ACCEPT) {
+    } else if (state == ACCEPT) {
         cancel();
         state = OFF;
         cout << "Automata is off\n";
-    }
-    else {
+    } else {
         cout << "Can't turn off the automata in this state\n";
     }
 }
@@ -34,8 +33,7 @@ void Automata::coin(int money) {
         cash += money;
         state = ACCEPT;
         cout << "Cash added: " << money << "\n";
-    }
-    else {
+    } else {
         cout << "Can't add cash in this state\n";
     }
 }
@@ -46,8 +44,7 @@ void Automata::printMenu() {
         for (int i = 0; i < menu.size(); i++) {
             cout << i + 1 << ". " << menu[i] << " - " << prices[i] << "\n";
         }
-    }
-    else {
+    } else {
         cout << "Can't print menu in this state\n";
     }
 }
@@ -59,12 +56,10 @@ void Automata::choice(int item) {
             current_price = prices[choice_];
             state = CHECK;
             cout << "Choice made: " << menu[choice_] << "\n";
-        }
-        else {
+        } else {
             cout << "Invalid choice\n";
         }
-    }
-    else {
+    } else {
         cout << "Can't make a choice in this state\n";
     }
 }
@@ -75,8 +70,7 @@ void Automata::cancel() {
         cash = 0;
         state = WAIT;
         cout << "Order cancelled. Change: " << change << "\n";
-    }
-    else {
+    } else {
         cout << "Can't cancel in this state\n";
     }
 }
@@ -90,12 +84,10 @@ void Automata::cook() {
             cout << "Order ready: " << menu[choice_] << "\n";
             choice_ = -1;
             current_price = 0;
-        }
-        else {
+        } else {
             cout << "Not enough cash\n";
         }
-    }
-    else {
+    } else {
         cout << "Can't cook in this state\n";
     }
 }
@@ -103,8 +95,7 @@ void Automata::cook() {
 void Automata::finish() {
     if (state == COOK) {
         state = WAIT;
-    }
-    else {
+    } else {
         cout << "Can't finish in this state\n";
     }
 }
