@@ -1,3 +1,4 @@
+// Copyright 2023 Rudimix
 #include "Automata.h"
 
 int main() {
