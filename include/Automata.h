@@ -1,12 +1,14 @@
 // Copyright 2023 Rudimix
-#ifndef AUTOMATA_H
-#define AUTOMATA_H
+#ifndef INCLUDE_AUTOMATA_H_
+#define INCLUDE_AUTOMATA_H_
 
 #include <iostream>
 #include <string>
 #include <vector>
 
-using namespace std;
+using std::vector;
+using std::string;
+using std::cout;
 
 class Automata {
  public:
@@ -38,4 +40,4 @@ class Automata {
     int current_price;
 };
 
-#endif // AUTOMATA_H
+#endif // INCLUDE_AUTOMATA_H_
