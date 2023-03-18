@@ -1,3 +1,7 @@
+// Copyright 2023 Rudimix
+#ifndef AUTOMATA_H
+#define AUTOMATA_H
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -5,7 +9,7 @@
 using namespace std;
 
 class Automata {
-public:
+ public:
     Automata();
     enum State {
         OFF,
@@ -24,7 +28,8 @@ public:
     void finish();
     Automata::State getState();
     int getCash();
-private:
+
+ private:
     State state;
     vector<string> menu;
     vector<int> prices;
@@ -32,3 +37,5 @@ private:
     int choice_;
     int current_price;
 };
+
+#endif // AUTOMATA_H
